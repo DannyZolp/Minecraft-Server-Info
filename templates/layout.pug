@@ -1,0 +1,16 @@
+block variables
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    link(rel="shortcut icon", href="/favicon.ico")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    title #{title} | SMP Server
+  body
+    div#root
+      block layout-content
+      .div(class="footer text-center py-3")
+        a(href="https://github.com/DannyZolp") 
+          p Made with love by Danny Zolp

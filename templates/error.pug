@@ -1,0 +1,10 @@
+extends layout
+
+block layout-content
+    .View(class="fluid-container text-center")
+        .Banner
+            h1 SMP Server
+            h4 Gamer Girl Statistics
+        .Error(class="m-5")
+            h3(id="errorEasyText") #{server.error.understandable}
+            code(id="error") #{server.error.problem}
