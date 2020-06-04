@@ -1,28 +1,26 @@
 extends layout
 
 block layout-content
-  script(src="/api/v1/web/customscript")
+  script(src="/api/v2/web/customscript")
   .View(class="fluid-container text-center mt-5")
     h1.Banner SMP Server
     .Message
       .Title
         h4 Gamer Girl Statistics
-    .Statistics(class="row m-5")
-      .PlayersOnline(class="col")
-        a(href="javascript:void()", onclick="togglePlayerCard()")
-          h3 Players Online: #{server.players.online} out of #{server.players.max}
-        .PlayerCard(class="card", id="PlayerCard" style="display:none")
-            .ul(class="list-group list-group-flush")
-            -
-              var list = server.players.list
-            each item in list
-              li(class="list-group-item")= item
-      .ServerVersion(class="col")
-        h3 Server Version: #{server.version}
-    .Downloads(class="row m-5")
-      .DownloadWorldFile(class="col")
-        h4 Download World File
-        form(method="post", action="/api/v1/world-download")
-          input(type="submit", class="btn btn-primary", value="Download!")
-      .JoinDiscord(class="col")
-        iframe(src=`https://discordapp.com/widget?id=${discord.serverId}&theme=dark`, width="350", height="400", allowtransparency="true", frameborder="0")
+    .EasyAccessInfo(class="m-5")
+      h3 Server IP: #{server.address}
+    .PlayersOnline(class="m-5")
+      a(href="javascript:void()", onclick="togglePlayerCard()")
+        h3 Players Online: #{server.players.online} out of #{server.players.max}
+      .PlayerCard(class="card container", id="PlayerCard" style="display:none")
+          .ul(class="list-group list-group-flush")
+           -
+            var list = server.players.list
+          each item in list
+            li(class="list-group-item")= item
+    .ServerVersion(class="m-5")
+      h3 Server Version: #{server.version}
+    .DownloadWorldFile(class="m-5")
+      h4 Download World File
+      form(method="get", action="/api/v2/world-download")
+        input(type="submit", class="btn btn-primary", value="Download!")

@@ -1,18 +1,25 @@
 {
   "name": "minecraft-server-info",
   "version": "2.0.0",
-  "description": "An easy way to monitor and download simple information about a Minecraft Server",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "server",
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DannyZolp/Minecraft-Server-Info.git"
   },
   "author": "dannyzolp",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DannyZolp/Minecraft-Server-Info/issues"
+  },
+  "homepage": "https://github.com/DannyZolp/Minecraft-Server-Info#readme",
   "dependencies": {
     "adm-zip": "^0.4.14",
-    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
